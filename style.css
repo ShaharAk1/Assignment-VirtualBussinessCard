@@ -1,22 +1,214 @@
+:root {
+    --bg: #FDF6E9;
+    --text: #3B2F2A;
+    --nav-bg: linear-gradient(135deg, #E8935A, #C9603C);
+    --nav-bg-soft: linear-gradient(135deg, rgba(232, 147, 90, 0.55), rgba(201, 96, 60, 0.55));
+    --nav-text: #FFF8EF;
+    --link: #B3502A;
+    --link-hover: #7A3319;
+    --toggle-shadow: rgba(59, 47, 42, 0.25);
+}
+
+body:has(#theme-toggle:checked) {
+    --bg: #191830;
+    --text: #EDE6D6;
+    --nav-bg: linear-gradient(135deg, #383163, #211E3F);
+    --nav-bg-soft: linear-gradient(135deg, rgba(56, 49, 99, 0.55), rgba(33, 30, 63, 0.55));
+    --nav-text: #F4E9D8;
+    --link: #F2A65A;
+    --link-hover: #FFC988;
+    --toggle-shadow: rgba(0, 0, 0, 0.4);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F7F3E3;
-    color: #2B2118;
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: all 0.5s ease;
+}
+
+nav {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 20px 0 20px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 6px var(--toggle-shadow);
+    transition: all 0.5s ease;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.theme-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.mode-toggle {
+    width: 44px;
+    height: 44px;
+    left: 0;
+    margin: 0 0 0 30px;
+    display: block;
+    border-radius: 50%;
+    background-image: url('./public/moon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 68%;
+    background-color: #fff8ef;
+    box-shadow: 0 0 0 3px var(--toggle-shadow);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.mode-toggle:hover {
+    box-shadow: 0 0 0 3px var(--toggle-shadow), 0 0 10px var(--toggle-shadow);
+    transform:rotateZ(-360deg);
+}
+
+#theme-toggle:checked + nav .mode-toggle {
+    background-image: url('./public/sun.png');
+    background-color: #2b2148;
 }
 
 .contact-info {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20px 1fr;
     align-items: center;
-    margin: 0;
+    column-gap: 10px;
     font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+    padding: 6px 0;
 }
 
 .contact-info img {
-    margin: 10px;
+    width: 18px;
+    margin: 0;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-label {
+    color: var(--text);
+    opacity: 0.75;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.profile-main {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-pic {
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--toggle-shadow);
+}
+
+.profile-info {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.contact-list {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: 150px;
+    background: var(--nav-bg-soft);
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--toggle-shadow);
+}
+
+.bio {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+.projects {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 60px;
+    padding: 0 20px;
+}
+
+.projects h3 {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: block;
+    text-align: left;
+    color: var(--text);
+    background: var(--nav-bg-soft);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--toggle-shadow);
+    padding: 16px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    color: var(--text);
+    text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px var(--toggle-shadow);
+}
+
+.project-card h5 {
+    margin: 0 0 8px;
+}
+
+.project-card p {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.project-tags {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--link);
 }
