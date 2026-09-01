@@ -158,6 +158,7 @@ a:hover {
     background: var(--nav-bg-soft);
     padding: 16px 20px;
     border-radius: 14px;
+    margin-right: 20px;
     box-shadow: 0 4px 12px var(--toggle-shadow);
 }
 
@@ -194,6 +195,7 @@ a:hover {
     border-radius: 14px;
     box-shadow: 0 4px 12px var(--toggle-shadow);
     padding: 16px 20px;
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
