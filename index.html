@@ -4,49 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>כרטיס ביקור דיגיטלי- שחר עקיבא</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <input type="checkbox" id="theme-toggle" class="theme-checkbox">
-    <nav>
-        <label for="theme-toggle" class="mode-toggle" aria-label="Toggle dark mode"></label>
-    </nav>
-    <div class="profile">
-        <div class="profile-main">
-            <img class="profile-pic" src="./public/shahar.jpg" alt="Shahar Akiva" width="200">
-            <div class="profile-info">
-                <h1>Shahar Akiva</h1>
-                <h4>Computer Science Student</h4>
-            </div>
-        </div>
-        <div class="contact-list">
-            <span class="contact-info"><img src="./public/gmail.png" alt="Email" width="20"><p><span class="contact-label">Email:</span> <a href="mailto:shaharak0606@gmail.com">shaharak0606@gmail.com</a></p></span>
-            <span class="contact-info"><img src="./public/phone-call.png" alt="Phone" width="20"><p><span class="contact-label">Phone number:</span> <a href="tel:052-379-7791">052-379-7791</a></p></span>
-            <span class="contact-info"><img src="./public/linkedin.png" alt="LinkedIn" width="20"><p><span class="contact-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/shahar-akiva-7427422a4/" target="_blank">https://www.linkedin.com/in/shahar-akiva-7427422a4/</a></p></span>
-            <span class="contact-info"><img src="./public/github.png" alt="GitHub" width="20"><p><span class="contact-label">GitHub:</span> <a href="https://github.com/ShaharAk1" target="_blank">https://github.com/ShaharAk1</a></p></span>
-        </div>
-    </div>
-    <p class="bio">Hello! I'm Shahar Akiva, a Computer Science student with hands-on experience in web and game development. I currently work in technical support at Doctor Clinix, diagnosing data-level and connectivity issues across client-server systems, and previously served as a frontend web developer in the IDF, building internal tools and interactive interfaces with modern JavaScript frameworks. I enjoy building user-friendly interfaces and creative digital products, and I'm always looking to learn and grow. This is my digital business card - feel free to reach out through any of the links above, I'd love to connect.</p>
 
-    <section class="projects">
-        <h3>Projects</h3>
-        <div class="project-grid">
-            <a class="project-card" href="https://github.com/ShaharAk1/ChessWeb" target="_blank">
-                <h5>ChessWeb</h5>
-                <p>An in-progress web platform for studying and playing chess, including multiplayer matches with rooms.</p>
-                <span class="project-tags">JavaScript</span>
-            </a>
-            <a class="project-card" href="https://github.com/ShaharAk1/PTM_project_2026" target="_blank">
-                <h5>PTM Project</h5>
-                <p>A college project applying design patterns and advanced coding techniques.</p>
-                <span class="project-tags">Java</span>
-            </a>
-            <div class="project-card">
-                <h5>IDF Service Projects</h5>
-                <p>Several additional projects built during my military service - mostly web applications, plus Unity games, 3D model design, product design, and project management.</p>
-                <span class="project-tags">Unity · C# · Web · 3D Design</span>
+    <div class="backdrop" aria-hidden="true">
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+        <span class="blob blob-c"></span>
+    </div>
+
+    <label for="theme-toggle" class="mode-toggle" aria-label="Toggle dark mode"></label>
+
+    <main class="page">
+        <div class="card profile-card">
+            <div class="profile-main">
+                <div class="pic-frame">
+                    <img class="profile-pic" src="./public/shahar.jpg" alt="Shahar Akiva" width="200">
+                </div>
+                <div class="profile-info">
+                    <p class="eyebrow">&gt; whoami</p>
+                    <h1>Shahar Akiva</h1>
+                    <h4>Computer Science Student</h4>
+                </div>
+            </div>
+
+            <p class="bio">Hello! I'm Shahar Akiva, a Computer Science student with hands-on experience in web and game development. I currently work in technical support at Doctor Clinix, diagnosing data-level and connectivity issues across client-server systems, and previously served as a frontend web developer in the IDF, building internal tools and interactive interfaces with modern JavaScript frameworks. I enjoy building user-friendly interfaces and creative digital products, and I'm always looking to learn and grow. This is my digital business card - feel free to reach out through any of the links above, I'd love to connect.</p>
+
+            <div class="contact-list">
+                <a class="chip" href="mailto:shaharak0606@gmail.com">
+                    <img src="./public/gmail.png" alt="" width="18">
+                    <span><span class="chip-label">Email</span>shaharak0606@gmail.com</span>
+                </a>
+                <a class="chip" href="tel:052-379-7791">
+                    <img src="./public/phone-call.png" alt="" width="18">
+                    <span><span class="chip-label">Phone</span>052-379-7791</span>
+                </a>
+                <a class="chip" href="https://www.linkedin.com/in/shahar-akiva-7427422a4/" target="_blank">
+                    <img src="./public/linkedin.png" alt="" width="18">
+                    <span><span class="chip-label">LinkedIn</span>shahar-akiva-7427422a4</span>
+                </a>
+                <a class="chip" href="https://github.com/ShaharAk1" target="_blank">
+                    <img src="./public/github.png" alt="" width="18">
+                    <span><span class="chip-label">GitHub</span>ShaharAk1</span>
+                </a>
             </div>
         </div>
-    </section>
+
+        <section class="projects">
+            <p class="eyebrow">&gt; ls ./projects</p>
+            <h3>Projects</h3>
+            <div class="project-grid">
+                <a class="card project-card" href="https://github.com/ShaharAk1/ChessWeb" target="_blank">
+                    <h5>ChessWeb</h5>
+                    <p>An in-progress web platform for studying and playing chess, including multiplayer matches with rooms.</p>
+                    <span class="project-tags">JavaScript</span>
+                </a>
+                <a class="card project-card" href="https://github.com/ShaharAk1/PTM_project_2026" target="_blank">
+                    <h5>PTM Project</h5>
+                    <p>A college project applying design patterns and advanced coding techniques.</p>
+                    <span class="project-tags">Java</span>
+                </a>
+                <div class="card project-card">
+                    <h5>IDF Service Projects</h5>
+                    <p>Several additional projects built during my military service - mostly web applications, plus Unity games, 3D model design, product design, and project management.</p>
+                    <span class="project-tags">Unity · C# · Web · 3D Design</span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
